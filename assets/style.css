@@ -37,11 +37,16 @@ header{
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: transparent;
+    /* background: transparent; */
+    background: var(--bg-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+
+header .sticky{
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
 
 .logo{
@@ -205,11 +210,13 @@ section{
     /* width: 35vw; */
     /* height: 35vw; */
     border-radius: 40px;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
 }
 
 .heading{
     text-align: center;
     font-size: 4.5rem;
+    /* animation: slideBottom 1s ease forwards; */
 }
 
 .about-content h2{
@@ -233,6 +240,7 @@ span{
 /* services */
 .services h2{
     margin-bottom: 5rem;
+    /* animation: slideBottom 1s ease forwards; */
 }
 
 .services-container{
@@ -279,6 +287,7 @@ span{
 
 .portfolio h2{
     margin-bottom: 4rem;
+    /* animation: slideBottom 1s ease forwards; */
 }
 
 .portfolio-container{
@@ -360,6 +369,7 @@ span{
 
 .contact h2{
     margin-bottom: 3rem;
+    /* animation: slideBottom 1s ease forwards; */
 }
 
 .contact form{
@@ -432,6 +442,144 @@ footer{
 .footer-iconTop a i{
     font-size: 2.4rem;
     color: var(--second-bg-color);
+}
+
+/* breakpoints responsive*/
+@media(max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width: 991px){
+    header{
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .services {
+        padding: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .home-img img{
+        width: 50vw;
+    }
+
+    footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width: 768px){
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 40vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+
+@media(max-width: 365px) {
+    .home-img img {
+        width: 50vw;
+    }
+
+    /* .about-img img {
+        width: 50vw;
+    } */
+    footer {
+        flex-direction: column-reverse;
+    }
+
+    footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
 }
 
 /*animation*/
